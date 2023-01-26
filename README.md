@@ -1,5 +1,8 @@
 # programming-notes
 
+
+- Gitlab Sequence Diagram
+
 ```mermaid
 sequenceDiagram
     participant User Interface (UI)
