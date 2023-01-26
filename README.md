@@ -1,5 +1,6 @@
 # programming-notes
 
+```mermaid
 sequenceDiagram
     participant User Interface (UI)
     participant GitLab API
@@ -46,3 +47,4 @@ sequenceDiagram
     GitLab Elastic Stack ->> GitLab: Collect, analyze and visualize log data
     GitLab Prometheus ->> GitLab: Monitoring
     GitLab Alertmanager ->> GitLab: Managing alerts and notifications
+```
