@@ -51,3 +51,45 @@ sequenceDiagram
     GitLab Prometheus ->> GitLab: Monitoring
     GitLab Alertmanager ->> GitLab: Managing alerts and notifications
 ```
+
+- Gitlab Alertmanager Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant GitLab
+    participant GitLab API
+    participant Alertmanager
+    participant Prometheus
+    participant Elasticsearch
+    participant Alertmanager Rule Engine
+    participant Alertmanager Silencer
+    participant Alertmanager Inhibitor
+    participant Alertmanager Receiver
+    participant Alertmanager Router
+    participant Alertmanager Notifier
+    participant Alertmanager Notifications
+    participant User
+    User ->> GitLab: Send request
+    GitLab ->> GitLab API: Process request
+    GitLab API ->> Prometheus: Retrieve metrics
+    Prometheus ->> Alertmanager: Send alerts
+    Alertmanager Receiver ->> Alertmanager: Receive alerts
+    Alertmanager Router ->> Alertmanager Rule Engine: Route alerts
+    Alertmanager Rule Engine ->> Alertmanager: Filter and classify alerts
+    Alertmanager ->> Alertmanager Silencer: Mute alerts
+    Alertmanager ->> Alertmanager Inhibitor: Block alerts
+    Alertmanager ->> Elasticsearch: Store alerts
+    Alertmanager Notifier ->> Alertmanager Notifications: Send notifications
+    Alertmanager Notifications ->> GitLab: Send notifications
+    GitLab ->> User: Send notifications
+    note left of Alertmanager: Manages alerts and notifications for GitLab and its components
+    note left of Prometheus: Monitors the performance of GitLab and its components
+    note left of Elasticsearch: Stores and indexes alert data for retrieval and analysis
+    note left of Alertmanager Receiver: Receive alerts from various sources
+    note left of Alertmanager Router: Routes alerts to the appropriate rule groups
+    note left of Alertmanager Rule Engine: Filters and classifies alerts based on rules 
+    note left of Alertmanager Silencer: Mutes alerts based on certain conditions
+    note left of Alertmanager Inhibitor: Blocks alerts based on certain conditions
+    note left of Alertmanager Notifier: Send notifications to various endpoints
+    note left of Alertmanager Notifications: Handles the sending of notifications
+```
