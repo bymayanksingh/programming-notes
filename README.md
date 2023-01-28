@@ -1,5 +1,99 @@
 # programming-notes
 
+- Major Component Interaction Gitlab
+
+```mermaid
+graph TD
+
+Core --> API
+Core --> WebUI
+Core --> Database
+Core --> Repositories
+Core --> Issues
+Core --> MergeRequests
+Core --> Wikis
+Core --> Users
+Core --> Groups
+Core --> Notifications
+Core --> Authentication
+Core --> Authorization
+Core --> Backup
+Core --> Audit
+Core --> Performance
+Core --> Addons
+Core --> ExternalIntegrations
+
+API --> Core
+WebUI --> API
+Database --> Core
+Repositories --> Core
+Repositories --> Issues
+Repositories --> MergeRequests
+Repositories --> Wikis
+Repositories --> Notifications
+Issues --> Core
+Issues --> Repositories
+Issues --> MergeRequests
+Issues --> Wikis
+Issues --> Notifications
+MergeRequests --> Core
+MergeRequests --> Repositories
+MergeRequests --> Issues
+MergeRequests --> Wikis
+MergeRequests --> Notifications
+Wikis --> Core
+Wikis --> Repositories
+Wikis --> Issues
+Wikis --> MergeRequests
+Wikis --> Notifications
+Users --> Core
+Users --> Authentication
+Users --> Authorization
+Users --> Notifications
+Groups --> Core
+Groups --> Users
+Groups --> Authentication
+Groups --> Authorization
+Groups --> Notifications
+Notifications --> Core
+Notifications --> Repositories
+Notifications --> Issues
+Notifications --> MergeRequests
+Notifications --> Wikis
+Notifications --> Users
+Notifications --> Groups
+Authentication --> Core
+Authentication --> Users
+Authentication --> Groups
+Authorization --> Core
+Authorization --> Users
+Authorization --> Groups
+Backup --> Core
+Audit --> Core
+Performance --> Core
+Addons --> Core
+Addons --> CI/CDRunner
+Addons --> KubernetesIntegration
+Addons --> GitLabPages
+Addons --> GitLabRegistry
+Addons --> GitLabRunner
+Addons --> GitLabMonitoring
+Addons --> GitLabLogging
+Addons --> GitLabCI/CD
+Addons --> GitLabDevOps
+Addons --> GitLabSecurity
+ExternalIntegrations --> Core
+ExternalIntegrations --> GitHub
+ExternalIntegrations --> Jira
+ExternalIntegrations --> Slack
+ExternalIntegrations --> LDAP
+ExternalIntegrations --> SAML
+ExternalIntegrations --> MicrosoftTeams
+ExternalIntegrations --> GoogleCalendar
+ExternalIntegrations --> Trello
+ExternalIntegrations --> Bitbucket
+ExternalIntegrations --> Asana
+```
 
 - Gitlab Sequence Diagram
 
