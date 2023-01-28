@@ -193,4 +193,42 @@ sequenceDiagram
 ## System Design Diagrams
 
 ```mermaid
+graph LR;
+Client-->API_Gateway;
+API_Gateway-->Authentication_and_Authorization;
+Authentication_and_Authorization-->Rate_Limiting;
+Rate_Limiting-->Caching_Layer;
+Caching_Layer-->Business_Logic;
+Caching_Layer-->Data_Access;
+Data_Access-->Database;
+Business_Logic-->Queue;
+Queue-->Async_Processing;
+Async_Processing-->Notification_Service;
+Notification_Service-->SNS;
+Database-->Event_Driven_Microservice;
+Event_Driven_Microservice-->Logging_and_Monitoring;
+Business_Logic-->Load_Balancer;
+Load_Balancer-->Compute_Nodes;
+Compute_Nodes-->Service_Registry;
+Service_Registry-->Service_Discovery;
+Compute_Nodes-->Auto_Scaling;
+Compute_Nodes-->Auto_Healing;
+Compute_Nodes-->Blue_Green_Deployment;
+Compute_Nodes-->Circuit_Breaker;
+Compute_Nodes-->Backup_and_Recovery;
+Compute_Nodes-->Fault_Tolerance;
+Compute_Nodes-->Security_Group;
+Compute_Nodes-->Firewall;
+Compute_Nodes-->VPN;
+Compute_Nodes-->Content_Delivery_Network;
+Compute_Nodes-->DNS;
+Compute_Nodes-->TLS;
+Compute_Nodes-->IP_Address_Management;
+Compute_Nodes-->Domain_Name_System;
+Compute_Nodes-->Intrusion_Detection;
+Compute_Nodes-->Intrusion_Prevention;
+Compute_Nodes-->Web_Application_Firewall;
+Compute_Nodes-->DDOS_Protection;
+Compute_Nodes-->API_Management;
+Compute_Nodes-->API_Gateway;
 ```
