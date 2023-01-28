@@ -1,5 +1,7 @@
 # programming-notes
 
+## Gitlab Diagrams:
+
 - Major Component Interaction Gitlab
 
 ```mermaid
@@ -186,4 +188,9 @@ sequenceDiagram
     note left of Alertmanager Inhibitor: Blocks alerts based on certain conditions
     note left of Alertmanager Notifier: Send notifications to various endpoints
     note left of Alertmanager Notifications: Handles the sending of notifications
+```
+
+## System Design Diagrams
+
+```mermaid
 ```
