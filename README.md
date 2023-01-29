@@ -209,6 +209,43 @@ graph LR;
 
 ```
 
+```mermaid
+sequenceDiagram
+  participant Data Collection Microservice
+  participant Health Check Microservice
+  participant Alerting Microservice
+  participant Time-series Database
+  participant Dashboard
+  participant Admin
+  participant Third-party Integration
+
+  Data Collection Microservice->>Health Check Microservice: Collects Metrics
+    loop Every x Minutes
+      Health Check Microservice->>Health Check Microservice: Performs Health Check
+      Health Check Microservice->>Health Check Microservice: Evaluates Metrics
+      opt Health Check Passes
+        Health Check Microservice->>Time-series Database: Stores Metrics
+      end
+      opt Health Check Fails
+        Health Check Microservice->>Health Check Microservice: Publishes Event on Failure
+        Alerting Microservice->>Health Check Microservice: Subscribes to Event
+        Health Check Microservice->>Alerting Microservice: Sends Event on Failure
+        Alerting Microservice->>Alerting Microservice: Triggers Alert
+        Alerting Microservice->>Admin: Sends Notification
+        Admin->>Admin: Reviews Notification
+        opt Admin Resolves Alert
+          Admin->>Alerting Microservice: Acknowledges/Resolves Alert
+        end
+        opt Admin Escalates Alert
+          Admin->>Third-party Integration: Forwards Alert
+          Third-party Integration->>Third-party Integration: Resolves Alert
+        end
+      end
+    end
+  Time-series Database->>Dashboard: Provides Metrics
+  Dashboard->>Dashboard: Displays Health Status
+```
+
 - System Design General Template
 
 ```mermaid
