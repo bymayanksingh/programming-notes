@@ -192,6 +192,24 @@ sequenceDiagram
 
 ## System Design Diagrams
 
+- Alerting & Monitoring System
+
+```mermaid
+graph LR;
+    Data_Collection --> Alerting_Rules;
+    Alerting_Rules --> Notification_Channels;
+    Notification_Channels --> Dashboards;
+    Dashboards --> Alert_Correlation;
+    Alert_Correlation --> On-call_Scheduling;
+    On-call_Scheduling --> Escalation_Policy;
+    Data_Collection --> Dashboards;
+    Alerting_Rules --> Alert_Correlation;
+    Notification_Channels --> On-call_Scheduling;
+    On-call_Scheduling --> Escalation_Policy;
+
+```
+
+
 ```mermaid
 graph LR;
 Client-->API_Gateway;
