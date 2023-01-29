@@ -209,6 +209,7 @@ graph LR;
 
 ```
 
+- System Design General Template
 
 ```mermaid
 graph LR;
