@@ -2,6 +2,26 @@
 
 ## Gitlab Diagrams:
 
+- Study Guide Job @ Gitlab
+
+```mermaid
+graph LR
+A[Significant experience with Ruby on Rails] --> B[Develop new features in collaboration with product management, UX, and frontend teams]
+A --> C[Review Rails and/or database changes submitted by other engineers or community contributors]
+A --> D[Document best practices or patterns to avoid]
+A --> E[Develop tooling to proactively inform developers of potential performance issues]
+
+B --> F[Keep changes small and iterate towards best solution]
+B --> G[Research, design and implement solutions to improve product performance]
+
+C --> D
+C --> E
+
+D --> G
+
+E --> G
+```
+
 - Major Component Interaction Gitlab
 
 ```mermaid
