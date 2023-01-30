@@ -288,3 +288,5 @@ Compute_Nodes-->DDOS_Protection;
 Compute_Nodes-->API_Management;
 Compute_Nodes-->API_Gateway;
 ```
+
+[Byte Byte Go PDF](https://bytebyte-go.s3.amazonaws.com/ByteByteGo_LinkedIn_PDF.pdf)
