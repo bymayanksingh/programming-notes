@@ -2,7 +2,7 @@
 
 ## Gitlab Diagrams:
 
-- Study Guide Job @ Gitlab
+- Gitlab Guide
 
 ```mermaid
 graph LR
